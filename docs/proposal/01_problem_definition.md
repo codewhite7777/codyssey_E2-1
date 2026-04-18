@@ -101,6 +101,22 @@
 ### 1.5.2 2024년 SNS 뒷광고 적발 — 플랫폼 분포
 
 ```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "pie1": "#C13584",
+    "pie2": "#03C75A",
+    "pie3": "#FF0000",
+    "pie4": "#6B7280",
+    "pieTitleTextSize": "18px",
+    "pieSectionTextSize": "16px",
+    "pieLegendTextSize": "14px",
+    "pieOuterStrokeColor": "#ffffff",
+    "pieOuterStrokeWidth": "2px",
+    "pieSectionTextColor": "#ffffff",
+    "pieStrokeColor": "#ffffff"
+  }
+}}%%
 pie showData title 2024년 SNS 뒷광고 의심 게시물 플랫폼별 분포 (건, 공정위 발표)
     "인스타그램" : 10195
     "네이버 블로그" : 9423
