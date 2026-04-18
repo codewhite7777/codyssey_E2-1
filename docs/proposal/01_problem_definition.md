@@ -100,29 +100,9 @@
 
 ### 1.5.2 2024년 SNS 뒷광고 적발 — 플랫폼 분포
 
-```mermaid
-%%{init: {
-  "theme": "base",
-  "themeVariables": {
-    "pie1": "#C13584",
-    "pie2": "#03C75A",
-    "pie3": "#FF0000",
-    "pie4": "#6B7280",
-    "pieTitleTextSize": "18px",
-    "pieSectionTextSize": "16px",
-    "pieLegendTextSize": "14px",
-    "pieOuterStrokeColor": "#ffffff",
-    "pieOuterStrokeWidth": "2px",
-    "pieSectionTextColor": "#ffffff",
-    "pieStrokeColor": "#ffffff"
-  }
-}}%%
-pie showData title 2024년 SNS 뒷광고 의심 게시물 플랫폼별 분포 (건, 공정위 발표)
-    "인스타그램" : 10195
-    "네이버 블로그" : 9423
-    "유튜브" : 1409
-    "기타 (틱톡·네이버 카페 등)" : 984
-```
+![2024년 SNS 뒷광고 의심 게시물 플랫폼별 분포](../../assets/diagrams/platform_distribution_2024.png)
+
+<sub>생성 스크립트: [`scripts/make_platform_pie.py`](../../scripts/make_platform_pie.py) — `uv run scripts/make_platform_pie.py` 로 재생성 가능</sub>
 
 > _참고_: 본 차트는 "뒷광고(광고 미고지)" 기준 통계로, 본 프로젝트가 다루는 _허위·과장 광고_ 와 법적 구성요건은 다르지만, 숏폼·SNS에서 광고 신뢰 훼손의 규모·분포를 가늠하는 1차 지표로 사용한다.
 
