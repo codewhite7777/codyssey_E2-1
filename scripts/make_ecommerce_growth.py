@@ -74,7 +74,7 @@ def main() -> None:
     )
 
     max_val = max(values)
-    ax.set_ylim(0, max_val * 1.25)
+    ax.set_ylim(0, max_val * 1.32)
 
     for i, (bar, v) in enumerate(zip(bars, values)):
         ax.text(
@@ -99,38 +99,37 @@ def main() -> None:
             color=accent,
         )
 
-    # 코로나19 기간 강조
-    ax.annotate(
-        "COVID-19 비대면 소비 급증\n(2020~2021)",
-        xy=(1.5, 175),
-        xytext=(0.7, 280),
+    # COVID-19 비대면 소비 급증 — 2020~2021 구간 배경 음영 + 상단 라벨
+    ax.axvspan(0.5, 2.5, alpha=0.10, color="#EF4444", zorder=0)
+    ax.text(
+        1.5, max_val * 1.19,
+        "COVID-19 비대면 소비 급증",
         ha="center", va="center",
-        fontsize=10,
+        fontsize=10, fontweight="bold",
         color="#B91C1C",
-        fontweight="bold",
-        arrowprops=dict(
-            arrowstyle="-|>",
-            color="#B91C1C",
-            connectionstyle="arc3,rad=0.25",
-            lw=1.4,
+        bbox=dict(
+            boxstyle="round,pad=0.45",
+            facecolor="white",
+            edgecolor="#FCA5A5",
+            linewidth=1.2,
         ),
+        zorder=5,
     )
 
-    # 성숙기 진입 주석
-    ax.annotate(
-        "성숙기 진입\n성장 둔화",
-        xy=(6, 272),
-        xytext=(6.5, 320),
+    # 성숙기 진입 · 성장 둔화 — 2025 상단 라벨
+    ax.text(
+        6, max_val * 1.19,
+        "성숙기 진입 · 성장 둔화",
         ha="center", va="center",
-        fontsize=10,
+        fontsize=10, fontweight="bold",
         color="#1E3A8A",
-        fontweight="bold",
-        arrowprops=dict(
-            arrowstyle="-|>",
-            color="#1E3A8A",
-            connectionstyle="arc3,rad=-0.2",
-            lw=1.4,
+        bbox=dict(
+            boxstyle="round,pad=0.45",
+            facecolor="white",
+            edgecolor="#93C5FD",
+            linewidth=1.2,
         ),
+        zorder=5,
     )
 
     ax.set_title(
