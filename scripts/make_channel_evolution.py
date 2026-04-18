@@ -143,7 +143,7 @@ def main() -> None:
             era["title"],
             ha="center",
             va="center",
-            fontsize=14,
+            fontsize=15,
             fontweight="bold",
             color="white",
             zorder=3,
@@ -154,7 +154,7 @@ def main() -> None:
             era["period"],
             ha="center",
             va="center",
-            fontsize=10,
+            fontsize=11,
             color="white",
             alpha=0.9,
             zorder=3,
@@ -180,10 +180,10 @@ def main() -> None:
             center_y = body_top - (j + 0.5) * slot_h
 
             ax.text(
-                x + 0.25,
-                center_y + 0.28,
+                x + 0.3,
+                center_y + 0.36,
                 year,
-                fontsize=11,
+                fontsize=12,
                 fontweight="bold",
                 color=era["color"],
                 ha="left",
@@ -191,10 +191,10 @@ def main() -> None:
                 zorder=3,
             )
             ax.text(
-                x + 0.25,
-                center_y - 0.22,
+                x + 0.3,
+                center_y - 0.26,
                 desc,
-                fontsize=10,
+                fontsize=11,
                 color="#0F172A",
                 ha="left",
                 va="center",
@@ -220,7 +220,7 @@ def main() -> None:
             era["driver"],
             ha="center",
             va="center",
-            fontsize=11,
+            fontsize=12,
             fontweight="bold",
             color=era["color"],
             style="italic",
@@ -243,10 +243,10 @@ def main() -> None:
     ax.text(
         total_w / 2,
         9.95,
-        "국내 이커머스 광고 채널의 진화 — 4시기",
+        "국내 이커머스 광고 채널의 진화",
         ha="center",
         va="center",
-        fontsize=18,
+        fontsize=19,
         fontweight="bold",
         color="#0F172A",
     )
