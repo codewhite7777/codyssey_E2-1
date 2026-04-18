@@ -69,8 +69,9 @@
 
 - **숏폼 세션** — 한 번 보기 시작하면 평균 <mark>21분 연속 시청</mark>, 하루 평균 <mark>97분</mark> 모바일 영상 소비[^stat-shortform].
 - **10~30대** — 숏폼은 이미 주력 콘텐츠 장르이자 **이커머스 진입점 자체**[^stat-shortform].
-- **중장년·고령층으로 급격히 확장** — 2024년 기준 **유튜브 이용률이 <mark>50대 95.4% · 60대 99.3% · 70대 100%</mark>** 에 달한다. 60대의 68% · 70대의 59.3% 가 유튜브 등 1인 미디어를 주로 이용하며, 숏폼 이용률도 60대 30.0% · 70대 21.6% 로 빠르게 상승 중이다. 뉴스·시사 정보를 유튜브로 접하는 비율은 <mark>70대 93.1%</mark>[^stat-senior-youtube].
-- **60세 이상 SNS 최장시간 앱은 틱톡 계열** — 2024년 6월 기준 **틱톡 라이트 2,244만 시간** (1위), 틱톡 1,281만 시간 (2위)[^stat-senior-tiktok]. **AI 허구 권위자·딥페이크 허위광고에 더 쉽게 속을 수 있는 취약층**까지 이미 숏폼 이커머스 동선 안에 포섭되어 있다.
+- **유튜브는 전 연령대를 관통한다** — 방송통신위원회 2024 방송매체 이용행태조사 기준 **유튜브 연간 이용률이 10~50대에서 <mark>90%대 후반</mark>, 60대 이상도 <mark>86%</mark>** 로 집계되었다[^stat-kcc-media].
+- **뉴스·시사 정보를 유튜브로 얻는 비율은 연령이 올라갈수록 높아진다** — 한국언론진흥재단 2024 소셜미디어 이용자 조사 기준 <mark>50대 70.0% · 60대 82.6% · 70대 93.1%</mark>[^stat-kpf-sns]. 영상 중심 정보 소비가 고령층에서 더 강하다는 뜻이다.
+- **60세 이상 SNS 최장시간 앱 1·2위는 틱톡 계열** — 와이즈앱 2024년 6월 데이터 기준 <mark>**틱톡 라이트 2,244만 시간(1위), 틱톡 1,281만 시간(2위)**</mark>, 인스타그램 566만 시간(3위)[^stat-senior-tiktok]. **AI 허구 권위자·딥페이크 허위광고에 더 쉽게 속을 수 있는 취약층**까지 이미 숏폼 이커머스 동선 안에 포섭되어 있다.
 
 #### 결론
 
@@ -248,9 +249,11 @@
 
 [^stat-ai-regulation]: 관계부처 합동 「AI 생성물 표시 의무제 도입 및 허위광고 징벌적 손해배상 5배」 종합대책 발표 (2025-12-10). 뉴스1 보도: <https://www.news1.kr/politics/president/6003036>. 경향신문 「'AI 생성' 표시 의무화…허위·과장 광고엔 징벌적 손배」: <https://www.khan.co.kr/article/202512102018005>. 접속일 2026-04-18.
 
-[^stat-senior-youtube]: 한국언론진흥재단 「2024 소셜미디어 이용자 조사 결과 발표」 — 유튜브 이용률 50대 95.4% · 60대 99.3% · 70대 100%, 뉴스·시사정보 유튜브 선택 70대 93.1% — <https://www.kpf.or.kr/front/board/boardContentsView.do?board_id=246&contents_id=940a3bc4be914ac2a065b8922021728e>. 오마이뉴스 해설 「고령층에서 더 확실히 드러나는 '유튜브 편중 현상'」 (2025-04-19): <https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003120512>. 접속일 2026-04-18.
+[^stat-kcc-media]: 방송통신위원회 「2024 방송매체 이용행태조사 결과 발표」 (2024-12-31) — 유튜브 연간 이용률 10~50대 90%대 후반, 60대 이상 86%. 대한민국 정책브리핑 보도자료: <https://www2.korea.kr/briefing/pressReleaseView.do?newsId=156668269>. 공공데이터포털 원자료: <https://www.data.go.kr/data/3068653/fileData.do>. 접속일 2026-04-18.
 
-[^stat-senior-tiktok]: 데일리굿뉴스 「노년층 스마트폰 과의존 증가…SNS앱 1위는 '틱톡'」 — 2024년 6월 60세 이상 SNS 앱 사용시간 1위 틱톡 라이트 2,244만 시간, 2위 틱톡 1,281만 시간, 3위 인스타그램 566만 시간 — <https://www.goodnews1.com/news/articleView.html?idxno=451816>. 접속일 2026-04-18.
+[^stat-kpf-sns]: 한국언론진흥재단 「2024 소셜미디어 이용자 조사」(2024년 10~11월, 만 19세 이상 3,000명 대면조사) — 뉴스·시사정보를 **1순위 소셜미디어**로 유튜브 선택 비율 50대 70.0% · 60대 82.6% · 70대 93.1% (오마이뉴스 직접 인용 확인). 조사 개요: <https://www.kpf.or.kr/front/board/boardContentsView.do?board_id=246&contents_id=940a3bc4be914ac2a065b8922021728e>. 오마이뉴스 해설 「고령층에서 더 확실히 드러나는 '유튜브 편중 현상'」 (2025-04-19): <https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003120512>. 접속일 2026-04-18.
+
+[^stat-senior-tiktok]: 데일리굿뉴스 「노년층 스마트폰 과의존 증가…SNS앱 1위는 '틱톡'」 — 와이즈앱 2024년 6월 집계, 60세 이상 SNS 앱 사용시간 1위 틱톡 라이트 2,244만 시간, 2위 틱톡 1,281만 시간, 3위 인스타그램 566만 시간 — <https://www.goodnews1.com/news/articleView.html?idxno=451816>. 접속일 2026-04-18.
 
 [^stat-deepfake-global]: LSE International Development Blog 「The Deepfake Blindspot in AI Governance」 (2025-12-04) — <https://blogs.lse.ac.uk/internationaldevelopment/2025/12/04/the-deepfake-blindspot-in-ai-governance/>. Tech Transparency Project 2025-10 — Meta 상에서 63 사기 광고주가 150,600건의 딥페이크 광고 집행, 약 $49M 지출. Resemble.ai Q2 2025 — 487건 딥페이크 공격 (전분기 대비 41%↑), 약 $347M 피해. 접속일 2026-04-18.
 
