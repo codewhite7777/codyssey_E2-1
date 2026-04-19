@@ -61,13 +61,13 @@ def draw_funnel_stage(ax, cx, top_y, bottom_y, top_w, bottom_w, color,
                    edgecolor="white", linewidth=2, zorder=2)
     ax.add_patch(poly)
     mid_y = (top_y + bottom_y) / 2
-    ax.text(cx, mid_y + 0.18, stage_label,
+    ax.text(cx, mid_y + 0.25, stage_label,
             ha="center", va="center",
             fontsize=12, fontweight="bold",
             color=text_color, zorder=3)
-    ax.text(cx, mid_y - 0.28, stage_value,
+    ax.text(cx, mid_y - 0.22, stage_value,
             ha="center", va="center",
-            fontsize=10, color=text_color, alpha=0.9, zorder=3)
+            fontsize=9, color=text_color, alpha=0.9, zorder=3)
 
 
 def main() -> None:
@@ -89,7 +89,7 @@ def main() -> None:
     ]
 
     top_y = 6.0
-    widths = [5.4, 4.4, 3.4, 2.4, 1.6]
+    widths = [5.4, 5.0, 4.6, 4.4, 4.4]
     for i, (label, value, color, _) in enumerate(trad_stages):
         draw_funnel_stage(
             ax, left_cx,

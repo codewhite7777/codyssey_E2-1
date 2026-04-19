@@ -3,6 +3,7 @@
 # dependencies = [
 #   "matplotlib>=3.8",
 #   "numpy>=1.26",
+#   "Pillow>=10",
 # ]
 # ///
 """Render the convergence diagram — 4 flows meeting at the project's problem point.
@@ -25,7 +26,27 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.patches import FancyBboxPatch
+from PIL import Image
+
+
+def load_chromakey(path: Path, tol: int = 38) -> np.ndarray:
+    """Return RGBA array with the image's dominant background color keyed out."""
+    img = np.array(Image.open(path).convert("RGBA"))
+    h, w = img.shape[:2]
+    # Sample background from 4 corner patches (assumes bg is uniform at corners)
+    patch = 12
+    samples = np.concatenate([
+        img[:patch, :patch, :3].reshape(-1, 3),
+        img[:patch, -patch:, :3].reshape(-1, 3),
+        img[-patch:, :patch, :3].reshape(-1, 3),
+        img[-patch:, -patch:, :3].reshape(-1, 3),
+    ], axis=0)
+    key = np.median(samples, axis=0)
+    diff = np.abs(img[..., :3].astype(int) - key.astype(int)).max(axis=-1)
+    img[..., 3] = np.where(diff < tol, 0, 255).astype(np.uint8)
+    return img
 
 
 KOREAN_FONT_CANDIDATES = (
@@ -103,34 +124,68 @@ def main() -> None:
         (cx - cw / 2, cy - ch / 2),
         cw, ch,
         boxstyle="round,pad=0.05,rounding_size=0.3",
-        facecolor="#FEF3C7",
-        edgecolor="#B45309",
-        linewidth=3,
+        facecolor="#FFF6E3",
+        edgecolor="#E0B58A",
+        linewidth=2.5,
         zorder=5,
     )
     ax.add_patch(center_box)
+
+    # --- Confused-consumer illustration (chroma-keyed) ---
+    img_path = (
+        Path(__file__).resolve().parents[1]
+        / "assets" / "images" / "confused_consumer.jpg"
+    )
+    char_rgba = load_chromakey(img_path)
+    # Source aspect ratio preserved: 1200x800 ≈ 1.5:1
+    # Place inside left portion of center box (enlarged for emphasis)
+    img_w = 3.1
+    img_h = img_w / 1.5  # ≈ 2.07
+    img_left = cx - cw / 2 + 0.25
+    img_right = img_left + img_w
+    img_bottom = cy - img_h / 2
+    img_top = cy + img_h / 2
+    ax.imshow(
+        char_rgba,
+        extent=(img_left, img_right, img_bottom, img_top),
+        zorder=6,
+        aspect="auto",
+        interpolation="bilinear",
+    )
+    # Caption under illustration
     ax.text(
-        cx, cy + 0.95,
+        (img_left + img_right) / 2, img_bottom - 0.10,
+        "일반 소비자",
+        ha="center", va="top",
+        fontsize=10, fontweight="bold", color="#6B5844",
+        style="italic",
+        zorder=7,
+    )
+
+    # --- Problem text (shifted right to accommodate illustration) ---
+    text_cx = cx + 1.5
+    ax.text(
+        text_cx, cy + 0.95,
         "본 프로젝트 문제",
         ha="center", va="center",
-        fontsize=16, fontweight="bold",
-        color="#B45309",
+        fontsize=15, fontweight="bold",
+        color="#A8855C",
         zorder=6,
     )
     ax.text(
-        cx, cy - 0.05,
-        "일반 소비자는 숏폼 피드의",
+        text_cx, cy - 0.05,
+        "숏폼 광고가 진짜인지 가짜인지",
         ha="center", va="center",
-        fontsize=13,
-        color="#0F172A",
+        fontsize=12,
+        color="#3F3D3A",
         zorder=6,
     )
     ax.text(
-        cx, cy - 0.60,
-        "허위·과장 광고를 실시간 판별할 수단이 없다",
+        text_cx, cy - 0.55,
+        "판별할 수단이 없다",
         ha="center", va="center",
         fontsize=13, fontweight="bold",
-        color="#B91C1C",
+        color="#C46B5F",
         zorder=6,
     )
 
