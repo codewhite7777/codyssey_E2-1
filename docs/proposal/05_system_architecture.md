@@ -7,7 +7,11 @@
 >  클라우드 서버의 고성능 AI 분석이 결합된 **Hybrid-Cloud 아키텍처**를 채택한다.
 
 ---
+## 전체 아키텍쳐 다이어그램 이미지
+<img width="1280" height="720" alt="시스템 아키텍처 다이어 그램" src="https://github.com/user-attachments/assets/aac54766-bc24-4e4f-a2b3-ebbf93182568" />
 
+
+---
 ## 5.1 전체 아키텍처 다이어그램
 
 ```mermaid
