@@ -95,7 +95,7 @@ def main() -> None:
         {
             "num": "4",
             "title": "도메인 좌표",
-            "subtitle": "L4 × L6 교차점",
+            "subtitle": "공급(L4) × 수요(L6) 교차점",
             "body": [
                 "• L4 광고·마케팅",
                 "   (공급 측 콘텐츠 분석)",
