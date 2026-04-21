@@ -4,7 +4,11 @@
 
 ## 3.1 서비스 이름
 
+**M.A.I.F.I.A** *(Monitoring Ad Intelligent Filter & Inspection Agent)*
 
+한글 별칭 — **"AI 패밀리"**
+
+> 서비스의 5 개 핵심 축을 풀네임에 내장: 광고를 **M**onitoring 하고 **I**ntelligent **F**ilter 로 걸러내 **I**nspection 한 결과를 **A**gent 가 제공한다. 발음이 '마피아'와 일치해 *"의심스러운 광고 뒷면을 대신 들여다봐 주는 AI 사설 보호자"* 브랜드 컨셉을 확립한다.
 
 ---
 

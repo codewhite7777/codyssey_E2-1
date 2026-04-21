@@ -10,7 +10,7 @@
 |------|------|
 | 도메인 | AI E-Commerce |
 | 팀명 | _TODO_ |
-| 서비스명 (가제) | _TODO_ |
+| 서비스명 | **M.A.I.F.I.A** *(Monitoring Ad Intelligent Filter & Inspection Agent)* · 한글 별칭 **"AI 패밀리"** |
 | 작성일 | _TODO_ |
 | 제출 기한 | 4주차 목요일 11:00 |
 

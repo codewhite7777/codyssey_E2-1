@@ -13,7 +13,7 @@ MVP 단계부터 **OCR · VLM · 딥페이크 판별** 3 개 분석 트랙과 **
 graph TD
     subgraph "User Layer"
         U[User] -- "의심 감지 (공유)" --> UD[User Device]
-        UD -- "Share Sheet" --> APP[Ad-Guardian App]
+        UD -- "Share Sheet" --> APP[M.A.I.F.I.A App]
     end
 
     subgraph "AI Multi-Modal Analysis"
@@ -46,7 +46,7 @@ graph TD
     |
     |  공유 버튼 → Share Sheet
     v
-[ Ad-Guardian App (Flutter) ]
+[ M.A.I.F.I.A App (Flutter) ]
     |
     |  광고 URL · 메타데이터 전송
     v
@@ -91,7 +91,7 @@ graph TD
              |-- 원본 저장 --> [ S3 / MinIO ]
              |
              v
-    [ Ad-Guardian App ]
+    [ M.A.I.F.I.A App ]
              |
              v
     [ 사용자: 위험도 · 의심 포인트 · 근거 · 딥페이크 판별 결과 ]
