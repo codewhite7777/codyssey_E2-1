@@ -9,7 +9,56 @@ MVP 단계부터 **OCR · VLM · 딥페이크 판별** 3 개 분석 트랙과 **
 ---
 
 ## 5.1 전체 아키텍처 다이어그램
+```mermaid
+graph TD
+    subgraph "User Layer"
+        UD[User Device] -- "공유 버튼 (Share Sheet)" --> APP[Ad-Guardian App <br/>Flutter]
+    end
 
+    subgraph "Backend Infrastructure"
+        GW[API Gateway]
+        BE[FastAPI Backend]
+        DB[(PostgreSQL)]
+        S3[(S3 / MinIO)]
+        WF[Workflow Engine <br/>Temporal]
+    end
+
+    subgraph "AI Analysis Engine"
+        OCR[OCR <br/>PP-OCRv5]
+        VLM[VLM <br/>Gemini 2.5 Flash/Pro]
+        CE[Claim Extractor]
+        PE[Policy Engine <br/>OPA]
+        VDB[(pgvector <br/>RAG)]
+        RG[Report Generator]
+    end
+
+    %% Flow Connections
+    APP -- "광고 URL · 메타데이터 전송" --> GW
+    GW --> BE
+    BE -- "요약 정보 저장" --> DB
+    BE -- "작업 큐 등록" --> WF
+
+    WF -- "이미지 텍스트 추출" --> OCR
+    WF -- "영상/음성 멀티모달 분석" --> VLM
+
+    OCR & VLM --> CE
+    CE --> PE
+    PE -- "규정/사례 검색" --> VDB
+    PE --> RG
+
+    RG --> BE
+    BE -- "원본/결과물 저장" --> S3
+    BE -- "최종 분석 결과 전송" --> APP
+
+    APP -- "사용자 확인: 위험도 · 의심 포인트 · 근거" --> UD
+
+    %% Styling
+    style UD fill:#f9f,stroke:#333,stroke-width:2px
+    style APP fill:#bbf,stroke:#333,stroke-width:2px
+    style VDB fill:#dfd,stroke:#333,stroke-width:2px
+    style S3 fill:#dfd,stroke:#333,stroke-width:2px
+    style DB fill:#dfd,stroke:#333,stroke-width:2px
+```
 ```
 [ User ]
  (광고 시청 중 의심 감지 → 공유 결정)  ← 능동 호출 축
