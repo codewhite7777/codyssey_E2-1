@@ -30,12 +30,13 @@ MVP에서는 비동기 분석 파이프라인을 중심으로 구현하고,
     |
     |-------------------------------+
     v                               v
-[ OCR (PP-OCRv5) ]         [ VLM (Gemini 2.5 Flash/Pro) ]
-    |                               |
-    +---------------+---------------+
-                    |
-                    v
-         [ Claim Extractor ]
+[ OCR (PP-OCRv5) ]   [ VLM (Gemini 2.5) ]   [ Deepfake Detector ]
+    |                      |                   (MesoNet + Wav2Vec2)
+    |                      |                         |
+    +----------+-----------+-------------------------+
+               |
+               v
+      [ Claim Extractor ]
                     |
                     v
          [ Policy Engine (OPA) ]
@@ -66,7 +67,7 @@ MVP에서는 비동기 분석 파이프라인을 중심으로 구현하고,
 | Frontend | 광고 공유 진입·결과 리포트 표시 | Flutter + iOS/Android Share Extension |
 | Backend / API | 요청 수신·사용자 관리·분석 상태 관리·결과 반환 | FastAPI (비동기 처리) |
 | Workflow Engine | 장시간 분석 작업 실행·재시도·실패 복구 | Temporal |
-| AI Analysis | OCR·장면 분석·claim 추출·리포트 생성 | PP-OCRv5, Gemini 2.5 Flash/Pro, Qwen2.5-VL (자가호스팅 대안) |
+| AI Analysis | OCR·장면 분석·claim 추출·리포트 생성·**딥페이크 판별** | PP-OCRv5, Gemini 2.5 Flash/Pro, Qwen2.5-VL (자가호스팅 대안), **MesoNet (얼굴 프레임 분석)**, **Wav2Vec2 (음성 포렌식)** |
 | Policy Engine | 규정·정책 기반 판정. 룰셋 분리 관리로 모델 재학습 없이 갱신 가능 | OPA (Open Policy Agent) |
 | Vector Search | 규정 문서 RAG. 확장 시 Qdrant로 전환 | pgvector |
 | Data Storage | 사용자·요청·claim·판정 결과 저장 | PostgreSQL |
@@ -90,6 +91,7 @@ MVP에서는 비동기 분석 파이프라인을 중심으로 구현하고,
 4. AI Analysis가 광고를 분해한다.
    OCR → 자막·배너 문구 추출
    VLM → 장면 요약·시각 단서 추출
+   Deepfake Detector → 얼굴 합성 확률·음성 합성 흔적
    Claim Extractor → 구조화된 claim JSON 생성
 
 5. Policy Engine이 claim과 규정 문서(pgvector RAG)를 대조해
@@ -110,7 +112,7 @@ MVP에서는 비동기 분석 파이프라인을 중심으로 구현하고,
 | Frontend | Flutter, iOS/Android Share Extension |
 | Backend | FastAPI, Redis (캐싱·큐) |
 | Workflow | Temporal |
-| AI/ML | Gemini 2.5 Flash/Pro, PP-OCRv5, Qwen2.5-VL, BGE-M3, OPA |
+| AI/ML | Gemini 2.5 Flash/Pro, PP-OCRv5, Qwen2.5-VL, BGE-M3, OPA, **MesoNet · Wav2Vec2 (딥페이크 판별)** |
 | Data | PostgreSQL, pgvector, S3/MinIO |
 | Infra | Docker, GPU 서버 또는 클라우드 VM |
 | Observability | OpenTelemetry |
