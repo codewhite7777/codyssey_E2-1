@@ -9,34 +9,6 @@ MVP 단계부터 **OCR · VLM · 딥페이크 판별** 3 개 분석 트랙과 **
 ---
 
 ## 5.1 전체 아키텍처 다이어그램
-```mermaid
-graph TD
-    subgraph "User Layer"
-        U[User] -- "의심 감지 (공유)" --> UD[User Device]
-        UD -- "Share Sheet" --> APP[M.A.I.F.I.A App]
-    end
-
-    subgraph "AI Multi-Modal Analysis"
-        WF[Workflow Engine] --> OCR[OCR: 자막 추출]
-        WF --> VLM[VLM: 장면 분석]
-        WF --> DF[Deepfake: 합성 탐지]
-        WF --> AF[Audio: 음성 분석]
-    end
-
-    subgraph "Reasoning & Report"
-        CE[Claim Extractor] --> PE[Policy Engine]
-        PE -- "RAG 검색" --> VDB[(pgvector)]
-        PE & DF & AF --> FS[Fusion Scorer]
-        FS --> RG[Report Generator]
-    end
-
-    APP --> WF
-    RG --> APP
-    APP -- "분석 결과 제공" --> U
-
-    style FS fill:#f96,stroke:#333
-```
-
 ```
 [ User ]
  (광고 시청 중 의심 감지 → 공유 결정)  ← 능동 호출 축
